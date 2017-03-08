@@ -1,0 +1,13 @@
+version: '2'
+services:
+  seagg_app:
+    build: .
+    container_name: seagg_ins
+    restart: always
+  rabbit:
+    image: rabbitmq:3.6.6-management
+    restart: always
+    volumes:
+      - rabbit_data:/data
+volumes:
+  rabbit_data: {}
